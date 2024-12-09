@@ -1,0 +1,307 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  width: 100%;
+  height: 100%;
+}
+
+/* Styling body  */
+body {
+  background: linear-gradient(45deg, #735da5, #d3c5e5);
+  display: flex;
+  justify-content: center;
+}
+
+#container {
+  margin: 5%;
+  display: flex;
+  flex-direction: column;
+  min-width: 30%;
+  border-radius: 10px;
+  padding: 25px 35px;
+  box-shadow: 0 0 15px #735da5;
+  border: none;
+}
+
+#clock {
+  width: 100%;
+  max-height: 25%;
+}
+
+#clock #time {
+  margin-top: 10px;
+  font-size: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+#clock #stop-alarm {
+  margin: 0px 0 10px 0;
+  padding: 5px;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  border-radius: 10px;
+  visibility: hidden;
+}
+
+/* Set Alarm Section*/
+#setAlarm {
+  max-width: 100%;
+  height: 10%;
+  display: flex;
+  margin: 20px 0px;
+  align-items: center;
+  justify-content: center;
+}
+
+.set-time select,
+button {
+  max-width: 100%;
+  font-size: 18px;
+  padding: 8px;
+  margin: 0 5px;
+  border-radius: 20px;
+  background-color: #d3c5e5;
+  border: none;
+  box-shadow: 0 0 10px #000;
+}
+
+.set-time button {
+  font-size: 20px;
+}
+
+/* Giving style to AlarmList*/
+#AlarmList {
+  margin-top: 15px;
+  max-height: 60%;
+  overflow: auto;
+}
+
+#AlarmList h3 {
+  text-align: center;
+  font-size: 35px;
+  margin: 0 0 8px;
+}
+
+.alarm-set {
+  display: flex;
+  padding: 10px 0;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.alarm-set span {
+  font-size: 30px;
+  font-weight: 550;
+}
+
+.alarm-set .btn-delete {
+  font-size: 20px;
+}
+
+/* giving all buttons button effect */
+#stop-alarm:active,
+.alarm-button:active,
+.alarm-set .btn-delete:active {
+  scale: 0.95;
+}
+
+/* media queries */
+@media (max-width: 665px) {
+
+  #clock #time {
+      margin-top: 0%;
+      font-size: 35px;
+  }
+
+  #clock #stop-alarm {
+      margin-top: 0px;
+      margin-bottom: 8px;
+  }
+
+  .set-time select,
+  .set-time .alarm-button {
+      font-size: 15px;
+  }
+
+}
+
+@media (max-width: 503px) {
+  #clock #time {
+      margin-top: 0%;
+      font-size: 30px;
+  }
+
+  #clock #stop-alarm {
+      margin-top: 0px;
+      margin-bottom: 8px;
+      font-size: 15px;
+  }
+
+  .set-time select,
+  .set-time .alarm-button {
+      font-size: 12px;
+  }
+
+  .set-time .alarm-button {
+      font-size: 14px;
+  }
+}
+
+@media (max-width: 450px) {
+  #clock #time {
+      margin-top: -0%;
+      font-size: 25px;
+      display: flex;
+      justify-content: center;
+  }
+
+  #setAlarm {
+      margin: -15px 0px;
+  }
+
+  #clock #stop-alarm {
+      margin-top: 0px;
+      margin-bottom: 8px;
+      font-size: 10px;
+  }
+
+  .set-time select,
+  .set-time .alarm-button {
+      font-size: 8px;
+  }
+
+  .set-time .alarm-button {
+      font-size: 12px;
+  }
+
+  .alarm-set span {
+      font-size: 20px;
+      font-weight: 550;
+  }
+
+  .alarm-set .btn-delete {
+      font-size: 12px;
+      padding: 5px;
+  }
+}
+
+@media (max-width: 380px) {
+  #clock #time {
+      margin-top: 0%;
+      font-size: 23px;
+  }
+
+  #clock #stop-alarm {
+      margin-top: 0px;
+      margin-bottom: 8px;
+      font-size: 10px;
+  }
+
+  #setAlarm {
+      margin: -15px 0px 5px;
+  }
+
+  .set-time select,
+  .set-time .alarm-button {
+      font-size: 10px;
+      padding: 5px;
+      margin: 2px;
+  }
+
+  .set-time .alarm-button {
+      font-size: 10px;
+      padding: 5px;
+  }
+
+  #AlarmList {
+      margin-top: 0;
+  }
+
+  #AlarmList h3 {
+      font-size: 30px;
+  }
+
+  .alarm-set span {
+      font-size: 20px;
+      font-weight: 550;
+  }
+
+  .alarm-set .btn-delete {
+      font-size: 12px;
+      padding: 5px;
+  }
+}
+
+@media (max-width: 358px) {
+  #clock #time {
+      margin-top: 5%;
+      font-size: 16px;
+  }
+
+  #clock #stop-alarm {
+      margin-top: 0px;
+      margin-bottom: 8px;
+      font-size: 8px;
+  }
+
+  .set-time select,
+  .set-time .alarm-button {
+      font-size: 7px;
+      padding: 2px;
+      margin: 2px;
+      height: 30px;
+  }
+
+  .set-time .alarm-button {
+      font-size: 10px;
+      padding: 5px;
+      height: 30px;
+  }
+
+  #AlarmList {
+      margin-top: 0;
+  }
+
+  #AlarmList h3 {
+      font-size: 25px;
+  }
+
+  .alarm-set span {
+      font-size: 15px;
+      font-weight: 550;
+  }
+
+  .alarm-set .btn-delete {
+      font-size: 12px;
+      padding: 5px;
+  }
+
+  #setAlarm {
+      max-width: 100%;
+      height: 5%;
+      display: flex;
+      margin: 20px 0px;
+      align-items: center;
+      justify-content: center;
+  }
+
+}
+
+
+@media (width: 1024px) and (height: 600px) {
+  #clock #time {
+      margin-top: 0%;
+  }
+
+  #clock #stop-alarm {
+      margin-top: 0px;
+      font-size: 16px;
+  }
+}
