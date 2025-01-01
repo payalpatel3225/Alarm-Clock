@@ -101,7 +101,7 @@ function setAlarm() {
 
 // function for deleting alarms
 function deleteAlarm(id) {
-  const confirmDelete = confirm;
+  const confirmDelete = confirm("क्या आप इस अलार्म को डिलीट करना चाहते हैं?");
   if (confirmDelete) {
     let element = document.getElementById(`alarm${id}`);
     let deleteIndex = arr.indexOf(
@@ -115,7 +115,7 @@ function deleteAlarm(id) {
 
 // Event Listener for stop alarm button
 stopAlarm.addEventListener("click", () => {
-  const confirmStop = confirm;
+  const confirmStop = confirm("क्या आप अलार्म बंद करना चाहते हैं?");
   if (confirmStop) {
     audio.pause(); // Stop the alarm sound
     stopAlarm.style.visibility = "hidden"; // Hide the stop button
