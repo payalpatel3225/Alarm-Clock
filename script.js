@@ -25,12 +25,12 @@ function displayTime() {
     minutes < 10 ? "0" : ""
   }${minutes}:${seconds < 10 ? "0" : ""}${seconds} ${period}`;
 
+  // Loop through all alarms and check if any match the current time
   arr.forEach((element) => {
     if (element == date.textContent) {
-      alert("ring ...");
-      stopAlarm.style.visibility = "visible";
+      stopAlarm.style.visibility = "visible"; // Make stop button visible
       audio.loop = true;
-      audio.play();
+      audio.play(); // Play the alarm sound
     }
   });
 }
@@ -73,7 +73,7 @@ for (let i = 2; i > 0; i--) {
   selectMenu[3].firstElementChild.insertAdjacentHTML("afterend", option);
 }
 
-// Event Listener for setAlarm when we click on set alarm button then this will inovke
+// Event Listener for setAlarm when we click on set alarm button then this will invoke
 document.querySelector(".alarm-button").addEventListener("click", setAlarm);
 
 // setAlarm function for setting Alarms
@@ -92,8 +92,7 @@ function setAlarm() {
       <span id="span${counter}">${time}</span>
       <button id="${counter}" class="btn-delete" onClick="deleteAlarm(this.id)">Delete</button>
     </div>`;
-    alert(`your alarm is set at ${time}`);
-    console.log(arr);
+    alert(`Your alarm is set at ${time}`);
     counter++;
     arr.push(time);
     saveData();
@@ -102,7 +101,7 @@ function setAlarm() {
 
 // function for deleting alarms
 function deleteAlarm(id) {
-  const confirmDelete = confirm();
+  const confirmDelete = confirm("क्या आप इस अलार्म को डिलीट करना चाहते हैं?");
   if (confirmDelete) {
     let element = document.getElementById(`alarm${id}`);
     let deleteIndex = arr.indexOf(
@@ -114,21 +113,21 @@ function deleteAlarm(id) {
   }
 }
 
-// Event Listener for alarm button
+// Event Listener for stop alarm button
 stopAlarm.addEventListener("click", () => {
-  const confirmStop = confirm();
-  if (confirmStop){
-    audio.pause();
-    stopAlarm.style.visibility = "hidden";
+  const confirmStop = confirm("क्या आप अलार्म बंद करना चाहते हैं?");
+  if (confirmStop) {
+    audio.pause(); // Stop the alarm sound
+    stopAlarm.style.visibility = "hidden"; // Hide the stop button
   }
 });
 
-// This function save our data in localStorage
+// This function saves our data in localStorage
 function saveData() {
   localStorage.setItem("data", alarmList.innerHTML);
 }
 
-// This function will fetch data from local storage and insert in alarmList.innerHTML
+// This function will fetch data from localStorage and insert in alarmList.innerHTML
 function showData() {
   alarmList.innerHTML = localStorage.getItem("data");
 }
