@@ -102,19 +102,25 @@ function setAlarm() {
 
 // function for deleting alarms
 function deleteAlarm(id) {
-  let element = document.getElementById(`alarm${id}`);
-  let deleteIndex = arr.indexOf(
-    document.getElementById(`span${id}`).textContent
-  );
-  arr.splice(deleteIndex, 1);
-  element.remove();
-  saveData();
+  const confirmDelete = confirm();
+  if (confirmDelete) {
+    let element = document.getElementById(`alarm${id}`);
+    let deleteIndex = arr.indexOf(
+      document.getElementById(`span${id}`).textContent
+    );
+    arr.splice(deleteIndex, 1);
+    element.remove();
+    saveData();
+  }
 }
 
 // Event Listener for alarm button
 stopAlarm.addEventListener("click", () => {
-  audio.pause();
-  stopAlarm.style.visibility = "hidden";
+  const confirmStop = confirm();
+  if (confirmStop){
+    audio.pause();
+    stopAlarm.style.visibility = "hidden";
+  }
 });
 
 // This function save our data in localStorage
